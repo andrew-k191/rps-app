@@ -1,0 +1,22 @@
+body {
+    text-align: center;
+}
+
+.img1, .img2, .img3 {
+    display: inline-block;
+    height: 100px;
+    width: 100px;
+}
+
+.img1 {
+    background-color: aqua;
+}
+
+.img2 {
+    background-color: yellow;
+}
+
+.img3 {
+    background-color: tomato;
+}
+

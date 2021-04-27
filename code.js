@@ -1,18 +1,12 @@
-// Where to start???
-// User starts with a selection: rock, paper, or scissors
+const rock = document.querySelector('.img1');
+const paper = document.querySelector('.img2');
+const scissors = document.querySelector('.img3');
+const promptText = document.querySelector('.prompt');
+const p1txt = document.querySelector('.p1')
+const p2txt = document.querySelector('.p2');
+const p3txt = document.querySelector('.p3');
 
-const userChoice = () => {
-    const userChoice = (prompt(`Let's play! Please enter rock, paper, or scissors!!`)).toLowerCase();
-    // check if user entered correct input
-    if ((userChoice === 'rock') || (userChoice === 'scissors') || (userChoice === 'paper')) {
-        return userChoice;
-    }
-    // otherwise an alert will prompt the user to enter proper information
-    console.log(`Invalid input!! You must enter either 'rock', 'paper', or 'scissors'!`);
-};
-
-// user chooses:
-
+// Computer choice
 const computerChoice = () => {
     const selections = ['rock', 'paper', 'scissors'];
     // generate random number 0, 1, or 2
@@ -21,57 +15,86 @@ const computerChoice = () => {
     return computerChoice;
 };
 
-
-
-// const gameResMes = (userChoice, computerChoice) => {
-
-// }
-// computer chooses: 
-
-const rockMatch = (choice) => {
-    switch (choice) {
+const rockMatch = (computerChoice) => {
+    p1txt.textContent = 'Your selection: Rock';
+    p2txt.textContent = `Computer chooses ${(computerChoice.slice(0,1)).toUpperCase() + computerChoice.slice(1)}`;
+    switch (computerChoice) {
         case 'scissors':
-            return 'User wins!! Rock beats scissors!';
+            p3txt.textContent = 'You win! Rock beats Scissors!';
+            break;
         case 'paper':
-            return 'Computer wins!! Paper beats rock!';
+            p3txt.textContent = 'You Lose! Rock loses to Paper';
+            break;
         default:
-            return 'Tie!!';
+            p3txt.textContent = `Its a Tie!!`;
     }
 };
 
-const scissorsMatch = (choice) => {
-    switch (choice) {
-        case 'paper':
-            return 'User wins!! Scissors beats paper!';
+const paperMatch = (computerChoice) => {
+    p1txt.textContent = 'Your selection: Paper';
+    p2txt.textContent = `Computer chooses ${(computerChoice.slice(0,1)).toUpperCase() + computerChoice.slice(1)}`;
+    switch (computerChoice) {
         case 'rock':
-            return 'Computer wins!! Rock beats scissors!';
-        default:
-            return 'Tie!';
-    }
-};
-
-const paperMatch = (choice) => {
-    switch (choice) {
-        case 'rock':
-            return 'User wins!! Paper beats rock!';
+            p3txt.textContent = 'You win! Paper beats Rock!';
+            break;
         case 'scissors': 
-            return `Computer wins!! Scissors beats paper!`;
+            p3txt.textContent = `You Lose! Paper loses to Scissors!`;
+            break;
         default: 
-            return 'Tie!';
+            p3txt.textContent = `It's a Tie!`;
     }
 };
 
-const determineResult = (userChoice, computerChoice) => {
-    if (userChoice === 'rock') { return rockMatch(computerChoice); }
-    else if (userChoice === 'scissors') {return scissorsMatch(computerChoice); }
-    else if (userChoice === 'paper') {return paperMatch(computerChoice); }
+const scissorsMatch = (computerChoice) => {
+    p1txt.textContent = 'Your selection: Scissors';
+    p2txt.textContent = `Computer chooses ${(computerChoice.slice(0,1)).toUpperCase() + computerChoice.slice(1)}`;
+    switch (computerChoice) {
+        case 'paper':
+            p3txt.textContent = 'You win! Scissors beats Paper!';
+            break;
+        case 'rock':
+            p3txt.textContent = 'You Lose! Scissors loses to Rock!';
+            break;
+        default:
+            p3txt.textContent = `It's a Tie!`;
+    }
 };
 
-console.log(`User choice: ${userChoice()}`);
-console.log(`Computer choice: ${computerChoice()}`);
-console.log(determineResult(userChoice(), computerChoice()));
+// User selects Rock
+rock.addEventListener('click', () => {
+    rockMatch(computerChoice());
+    promptText.textContent = 'To play again just make another selection!!';
+});
+
+// User selects Paper
+paper.addEventListener('click', () => {
+    paperMatch(computerChoice());
+    promptText.textContent = 'To play again just make another selection!!';
+});
+
+// User selects Scissors
+scissors.addEventListener('click', () => {
+    scissorsMatch(computerChoice());
+    promptText.textContent = 'To play again just make another selection!!';
+});
+
+
+// Change paragraph text when selection is made
+
+// Display user choice:
+// Display computer choice:
+// Display image for winner, none for tie
+
+// console.log(`User choice: ${userChoice()}`);
+// console.log(`Computer choice: ${computerChoice()}`);
+// console.log(determineResult(userChoice(), computerChoice()));
+
+
+
+
+
 // Computer choice will be displayed??
-// Flash the screen for invalid input???
+// Flash the screen green for win, red for loss, yellow for tie
 
 // How will things line or stack up? 
 
