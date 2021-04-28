@@ -2,7 +2,7 @@
 
 *A simple RPS app written in pure JavaScript, HTML, and CSS*
 
-Check it out <a href="">here</a>
+Check it out <a href="https://andrew-k191.github.io/rps-app/">here</a>
 
 <img src="images/rps_screenshot.png" alt="rock, paper, scissors screenshot">
 
