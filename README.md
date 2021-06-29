@@ -13,4 +13,4 @@ This app was relatively simple to construct. The biggest obstacle I encountered 
 
 ## Author
 
-* Andrew Knight - Aspiring Software Developer - (Website) | (LinkedIn)
+* **Andrew Knight** - *Software Developer* - (Website) | (LinkedIn)
